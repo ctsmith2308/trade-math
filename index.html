@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Practice</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HOME SCREEN ===== -->
+  <div id="screen-home" class="screen active">
+    <div class="container">
+      <h1 class="app-title">Math Practice</h1>
+      <p class="app-subtitle">Sharpen your mental math</p>
+
+      <!-- Tabs -->
+      <div class="home-tabs">
+        <button class="home-tab active" data-tab="tab-practice">Practice</button>
+        <button class="home-tab" data-tab="tab-reference">Quick Reference</button>
+      </div>
+
+      <!-- Practice tab content -->
+      <div class="tab-content active" id="tab-practice">
+        <div class="mode-cards">
+          <div class="mode-section-label">Fundamentals</div>
+          <button class="mode-card" data-mode="arithmetic">
+            <span class="mode-icon">+-</span>
+            <span class="mode-name">Arithmetic</span>
+            <span class="mode-desc">Addition, subtraction, multiplication, division</span>
+          </button>
+
+          <button class="mode-card" data-mode="multTables">
+            <span class="mode-icon">x</span>
+            <span class="mode-name">Multiplication Tables</span>
+            <span class="mode-desc">Learn and test your times tables</span>
+          </button>
+
+          <button class="mode-card" data-mode="fractions">
+            <span class="mode-icon">&#189;</span>
+            <span class="mode-name">Fractions</span>
+            <span class="mode-desc">Add, subtract, multiply, divide fractions &amp; mixed numbers</span>
+          </button>
+
+          <button class="mode-card" data-mode="decimals">
+            <span class="mode-icon">0.5</span>
+            <span class="mode-name">Decimals</span>
+            <span class="mode-desc">Decimal arithmetic and fraction-decimal conversion</span>
+          </button>
+
+          <button class="mode-card" data-mode="percentages">
+            <span class="mode-icon">%</span>
+            <span class="mode-name">Percentages</span>
+            <span class="mode-desc">Find percentages, discounts, markups, and conversions</span>
+          </button>
+
+          <div class="mode-section-label">Apply It</div>
+          <button class="mode-card" data-mode="tradeMath">
+            <span class="mode-icon">ft</span>
+            <span class="mode-name">Trade Math</span>
+            <span class="mode-desc">Feet, inches, fractions — ties it all together</span>
+          </button>
+
+          <button class="mode-card" data-mode="examPrep">
+            <span class="mode-icon">&#9733;</span>
+            <span class="mode-name">Exam Prep</span>
+            <span class="mode-desc">IECRM-style word problems — the final boss</span>
+          </button>
+        </div>
+
+        <div class="home-stats" id="home-stats"></div>
+      </div>
+
+      <!-- Reference tab content -->
+      <div class="tab-content" id="tab-reference">
+        <!-- SI Prefixes -->
+        <button class="ref-toggle" data-ref="ref-si">SI Prefixes</button>
+        <div class="ref-section" id="ref-si">
+          <table class="ref-table">
+            <tr><th>Prefix</th><th>Symbol</th><th>Factor</th></tr>
+            <tr><td>tera</td><td>T</td><td>1,000,000,000,000</td></tr>
+            <tr><td>giga</td><td>G</td><td>1,000,000,000</td></tr>
+            <tr><td>mega</td><td>M</td><td>1,000,000</td></tr>
+            <tr><td>kilo</td><td>k</td><td>1,000</td></tr>
+            <tr><td>hecto</td><td>h</td><td>100</td></tr>
+            <tr><td>deca</td><td>da</td><td>10</td></tr>
+            <tr class="ref-highlight"><td>base</td><td>-</td><td>1</td></tr>
+            <tr><td>deci</td><td>d</td><td>0.1</td></tr>
+            <tr><td>centi</td><td>c</td><td>0.01</td></tr>
+            <tr><td>milli</td><td>m</td><td>0.001</td></tr>
+            <tr><td>micro</td><td>&mu;</td><td>0.000001</td></tr>
+            <tr><td>nano</td><td>n</td><td>0.000000001</td></tr>
+            <tr><td>pico</td><td>p</td><td>0.000000000001</td></tr>
+          </table>
+          <div class="ref-note">Example: 1 kV = 1,000 V &bull; 1 mA = 0.001 A &bull; 5 MW = 5,000,000 W</div>
+        </div>
+
+        <!-- Length -->
+        <button class="ref-toggle" data-ref="ref-length">Length Conversions</button>
+        <div class="ref-section" id="ref-length">
+          <div class="ref-subtitle">Imperial</div>
+          <table class="ref-table">
+            <tr><td>1 foot (ft)</td><td>= 12 inches (in)</td></tr>
+            <tr><td>1 yard (yd)</td><td>= 3 feet = 36 inches</td></tr>
+            <tr><td>1 mile (mi)</td><td>= 5,280 feet = 1,760 yards</td></tr>
+          </table>
+          <div class="ref-subtitle">Metric</div>
+          <table class="ref-table">
+            <tr><td>1 centimeter (cm)</td><td>= 10 millimeters (mm)</td></tr>
+            <tr><td>1 meter (m)</td><td>= 100 cm = 1,000 mm</td></tr>
+            <tr><td>1 kilometer (km)</td><td>= 1,000 meters</td></tr>
+          </table>
+          <div class="ref-subtitle">Imperial &harr; Metric</div>
+          <table class="ref-table">
+            <tr><td>1 inch</td><td>= 25.4 mm = 2.54 cm</td></tr>
+            <tr><td>1 foot</td><td>= 30.48 cm = 0.3048 m</td></tr>
+            <tr><td>1 yard</td><td>= 0.9144 m</td></tr>
+            <tr><td>1 mile</td><td>= 1.609 km</td></tr>
+            <tr><td>1 meter</td><td>= 3.281 ft = 39.37 in</td></tr>
+            <tr><td>1 km</td><td>= 0.6214 miles</td></tr>
+          </table>
+        </div>
+
+        <!-- Weight / Mass -->
+        <button class="ref-toggle" data-ref="ref-weight">Weight &amp; Mass</button>
+        <div class="ref-section" id="ref-weight">
+          <div class="ref-subtitle">Imperial</div>
+          <table class="ref-table">
+            <tr><td>1 pound (lb)</td><td>= 16 ounces (oz)</td></tr>
+            <tr><td>1 ton</td><td>= 2,000 lbs</td></tr>
+          </table>
+          <div class="ref-subtitle">Metric</div>
+          <table class="ref-table">
+            <tr><td>1 gram (g)</td><td>= 1,000 milligrams (mg)</td></tr>
+            <tr><td>1 kilogram (kg)</td><td>= 1,000 grams</td></tr>
+            <tr><td>1 metric ton</td><td>= 1,000 kg</td></tr>
+          </table>
+          <div class="ref-subtitle">Imperial &harr; Metric</div>
+          <table class="ref-table">
+            <tr><td>1 oz</td><td>= 28.35 g</td></tr>
+            <tr><td>1 lb</td><td>= 453.6 g = 0.4536 kg</td></tr>
+            <tr><td>1 kg</td><td>= 2.205 lbs</td></tr>
+          </table>
+        </div>
+
+        <!-- Volume -->
+        <button class="ref-toggle" data-ref="ref-volume">Volume</button>
+        <div class="ref-section" id="ref-volume">
+          <div class="ref-subtitle">Imperial</div>
+          <table class="ref-table">
+            <tr><td>1 cup</td><td>= 8 fl oz</td></tr>
+            <tr><td>1 pint</td><td>= 2 cups = 16 fl oz</td></tr>
+            <tr><td>1 quart</td><td>= 2 pints = 32 fl oz</td></tr>
+            <tr><td>1 gallon (gal)</td><td>= 4 quarts = 128 fl oz</td></tr>
+          </table>
+          <div class="ref-subtitle">Metric</div>
+          <table class="ref-table">
+            <tr><td>1 liter (L)</td><td>= 1,000 milliliters (mL)</td></tr>
+          </table>
+          <div class="ref-subtitle">Imperial &harr; Metric</div>
+          <table class="ref-table">
+            <tr><td>1 fl oz</td><td>= 29.57 mL</td></tr>
+            <tr><td>1 liter</td><td>= 33.81 fl oz = 0.2642 gal</td></tr>
+            <tr><td>1 gallon</td><td>= 3.785 liters</td></tr>
+          </table>
+        </div>
+
+        <!-- Temperature -->
+        <button class="ref-toggle" data-ref="ref-temp">Temperature</button>
+        <div class="ref-section" id="ref-temp">
+          <table class="ref-table">
+            <tr class="ref-highlight"><td>F to C</td><td>&deg;C = (&deg;F &minus; 32) &times; 5/9</td></tr>
+            <tr class="ref-highlight"><td>C to F</td><td>&deg;F = (&deg;C &times; 9/5) + 32</td></tr>
+          </table>
+          <div class="ref-subtitle">Key Points</div>
+          <table class="ref-table">
+            <tr><td>Water freezes</td><td>32&deg;F = 0&deg;C</td></tr>
+            <tr><td>Water boils</td><td>212&deg;F = 100&deg;C</td></tr>
+            <tr><td>Room temp</td><td>~68&deg;F = ~20&deg;C</td></tr>
+            <tr><td>Body temp</td><td>98.6&deg;F = 37&deg;C</td></tr>
+          </table>
+        </div>
+
+        <!-- Electrical -->
+        <button class="ref-toggle" data-ref="ref-electrical">Electrical Formulas</button>
+        <div class="ref-section" id="ref-electrical">
+          <div class="ref-subtitle">Ohm's Law</div>
+          <div class="ref-formula-grid">
+            <div class="ref-formula">V = I &times; R</div>
+            <div class="ref-formula">I = V / R</div>
+            <div class="ref-formula">R = V / I</div>
+          </div>
+          <div class="ref-subtitle">Power Formulas</div>
+          <div class="ref-formula-grid">
+            <div class="ref-formula">P = V &times; I</div>
+            <div class="ref-formula">P = I&sup2; &times; R</div>
+            <div class="ref-formula">P = V&sup2; / R</div>
+          </div>
+          <div class="ref-subtitle">Rearranged for Any Value</div>
+          <div class="ref-formula-grid">
+            <div class="ref-formula">V = P / I</div>
+            <div class="ref-formula">V = &radic;(P &times; R)</div>
+            <div class="ref-formula">I = P / V</div>
+            <div class="ref-formula">I = &radic;(P / R)</div>
+            <div class="ref-formula">R = P / I&sup2;</div>
+            <div class="ref-formula">R = V&sup2; / P</div>
+          </div>
+          <div class="ref-subtitle">Units</div>
+          <table class="ref-table">
+            <tr><td>Voltage (V)</td><td>Volts &mdash; electrical pressure</td></tr>
+            <tr><td>Current (I)</td><td>Amps (A) &mdash; flow of charge</td></tr>
+            <tr><td>Resistance (R)</td><td>Ohms (&Omega;) &mdash; opposition to flow</td></tr>
+            <tr><td>Power (P)</td><td>Watts (W) &mdash; rate of energy use</td></tr>
+          </table>
+          <div class="ref-note">Common: 120V/15A residential circuit = 1,800W max &bull; 120V/20A = 2,400W max &bull; 240V for dryers, ranges, HVAC</div>
+        </div>
+
+        <!-- Geometry -->
+        <button class="ref-toggle" data-ref="ref-geometry">Geometry Formulas</button>
+        <div class="ref-section" id="ref-geometry">
+          <div class="ref-subtitle">2D &mdash; Area</div>
+          <table class="ref-table">
+            <tr><td>Rectangle</td><td>A = l &times; w</td></tr>
+            <tr><td>Triangle</td><td>A = &frac12; &times; b &times; h</td></tr>
+            <tr><td>Circle</td><td>A = &pi; &times; r&sup2;</td></tr>
+            <tr><td>Circumference</td><td>C = 2 &times; &pi; &times; r = &pi; &times; d</td></tr>
+          </table>
+          <div class="ref-subtitle">3D &mdash; Volume</div>
+          <table class="ref-table">
+            <tr><td>Box / Rectangular</td><td>V = l &times; w &times; h</td></tr>
+            <tr><td>Cylinder</td><td>V = &pi; &times; r&sup2; &times; h</td></tr>
+            <tr><td>Sphere</td><td>V = 4/3 &times; &pi; &times; r&sup3;</td></tr>
+          </table>
+          <div class="ref-note">&pi; &asymp; 3.14159 &bull; For conduit area: A = &pi; &times; (d/2)&sup2;</div>
+        </div>
+
+        <!-- AWG Wire Gauge -->
+        <button class="ref-toggle" data-ref="ref-awg">AWG Wire Gauge</button>
+        <div class="ref-section" id="ref-awg">
+          <table class="ref-table">
+            <tr><th>AWG</th><th>Diameter (in)</th><th>Typical Ampacity (Cu, 60&deg;C)</th></tr>
+            <tr><td>14</td><td>0.0641</td><td>15 A</td></tr>
+            <tr><td>12</td><td>0.0808</td><td>20 A</td></tr>
+            <tr><td>10</td><td>0.1019</td><td>30 A</td></tr>
+            <tr><td>8</td><td>0.1285</td><td>40 A</td></tr>
+            <tr><td>6</td><td>0.1620</td><td>55 A</td></tr>
+            <tr><td>4</td><td>0.2043</td><td>70 A</td></tr>
+            <tr><td>2</td><td>0.2576</td><td>95 A</td></tr>
+            <tr><td>1</td><td>0.2893</td><td>110 A</td></tr>
+            <tr><td>1/0</td><td>0.3249</td><td>125 A</td></tr>
+            <tr><td>2/0</td><td>0.3648</td><td>145 A</td></tr>
+            <tr><td>3/0</td><td>0.4096</td><td>165 A</td></tr>
+            <tr><td>4/0</td><td>0.4600</td><td>195 A</td></tr>
+          </table>
+          <div class="ref-note">Smaller AWG number = thicker wire = more ampacity. Values per NEC Table 310.16 (simplified).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SETTINGS SCREEN ===== -->
+  <div id="screen-settings" class="screen">
+    <div class="container">
+      <div class="screen-header">
+        <button class="btn-back" id="btn-settings-back">&larr; Back</button>
+        <h2 id="settings-title">Settings</h2>
+      </div>
+
+      <!-- Arithmetic settings -->
+      <div id="settings-arithmetic" class="settings-group" style="display:none;">
+        <h3>Operations</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="op-addition" checked> Addition (+)</label>
+          <label><input type="checkbox" id="op-subtraction" checked> Subtraction (-)</label>
+          <label><input type="checkbox" id="op-multiplication" checked> Multiplication (x)</label>
+          <label><input type="checkbox" id="op-division"> Division (/)</label>
+        </div>
+
+        <h3>Difficulty</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="difficulty" value="easy" checked> Easy</label>
+          <label><input type="radio" name="difficulty" value="medium"> Medium</label>
+          <label><input type="radio" name="difficulty" value="hard"> Hard</label>
+        </div>
+      </div>
+
+      <!-- Multiplication Tables settings -->
+      <div id="settings-multTables" class="settings-group" style="display:none;">
+        <h3>Tables to Practice</h3>
+        <div class="table-grid" id="table-grid"></div>
+
+        <h3>Mode</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="mult-mode" value="sequential" checked> Sequential (Learn)</label>
+          <label><input type="radio" name="mult-mode" value="random"> Random (Test)</label>
+        </div>
+      </div>
+
+      <!-- Trade Math settings -->
+      <div id="settings-tradeMath" class="settings-group" style="display:none;">
+        <h3>Difficulty</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="trade-difficulty" value="easy" checked> Easy (halves, quarters)</label>
+          <label><input type="radio" name="trade-difficulty" value="medium"> Medium (+ eighths)</label>
+          <label><input type="radio" name="trade-difficulty" value="hard"> Hard (+ sixteenths)</label>
+        </div>
+      </div>
+
+      <!-- Fractions settings -->
+      <div id="settings-fractions" class="settings-group" style="display:none;">
+        <h3>Operations</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="frac-op-addition" checked> Addition (+)</label>
+          <label><input type="checkbox" id="frac-op-subtraction" checked> Subtraction (-)</label>
+          <label><input type="checkbox" id="frac-op-multiplication"> Multiplication (x)</label>
+          <label><input type="checkbox" id="frac-op-division"> Division (/)</label>
+        </div>
+
+        <h3>Number Types</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="frac-type-proper" checked> Proper fractions (3/4)</label>
+          <label><input type="checkbox" id="frac-type-mixed" checked> Mixed numbers (2 3/4)</label>
+        </div>
+
+        <h3>Difficulty</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="frac-difficulty" value="easy" checked> Easy</label>
+          <label><input type="radio" name="frac-difficulty" value="medium"> Medium</label>
+          <label><input type="radio" name="frac-difficulty" value="hard"> Hard</label>
+        </div>
+      </div>
+
+      <!-- Decimals settings -->
+      <div id="settings-decimals" class="settings-group" style="display:none;">
+        <h3>Problem Types</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="dec-type-arithmetic" checked> Decimal arithmetic (+, -, x, /)</label>
+          <label><input type="checkbox" id="dec-type-to-fraction" checked> Decimal to fraction (0.75 = ?)</label>
+          <label><input type="checkbox" id="dec-type-from-fraction" checked> Fraction to decimal (3/4 = ?)</label>
+        </div>
+
+        <h3>Difficulty</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="dec-difficulty" value="easy" checked> Easy</label>
+          <label><input type="radio" name="dec-difficulty" value="medium"> Medium</label>
+          <label><input type="radio" name="dec-difficulty" value="hard"> Hard</label>
+        </div>
+      </div>
+
+      <!-- Percentages settings -->
+      <div id="settings-percentages" class="settings-group" style="display:none;">
+        <h3>Problem Types</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="pct-type-of" checked> X% of Y (find the amount)</label>
+          <label><input type="checkbox" id="pct-type-is" checked> X is what % of Y?</label>
+          <label><input type="checkbox" id="pct-type-to-decimal" checked> Percent to decimal (45% = ?)</label>
+          <label><input type="checkbox" id="pct-type-to-fraction" checked> Percent to fraction (75% = ?)</label>
+        </div>
+
+        <h3>Difficulty</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="pct-difficulty" value="easy" checked> Easy</label>
+          <label><input type="radio" name="pct-difficulty" value="medium"> Medium</label>
+          <label><input type="radio" name="pct-difficulty" value="hard"> Hard</label>
+        </div>
+      </div>
+
+      <!-- Exam Prep settings -->
+      <div id="settings-examPrep" class="settings-group" style="display:none;">
+        <h3>Categories</h3>
+        <div class="checkbox-group" id="exam-categories"></div>
+      </div>
+
+      <!-- Shared settings -->
+      <div class="settings-group">
+        <h3>Timer (seconds per problem)</h3>
+        <div class="radio-group">
+          <label><input type="radio" name="timer" value="0"> Off</label>
+          <label><input type="radio" name="timer" value="6"> 6s</label>
+          <label><input type="radio" name="timer" value="8" checked> 8s</label>
+          <label><input type="radio" name="timer" value="10"> 10s</label>
+          <label><input type="radio" name="timer" value="12"> 12s</label>
+        </div>
+
+        <h3>Options</h3>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="hide-mode"> Hide Mode (problem disappears after 3s)</label>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="btn-start">Start Practice</button>
+    </div>
+  </div>
+
+  <!-- ===== PLAY SCREEN ===== -->
+  <div id="screen-play" class="screen">
+    <div class="container">
+      <div class="play-header">
+        <button class="btn-back" id="btn-end-session">End</button>
+        <div class="score-bar" id="score-bar">
+          <span class="score-correct" id="score-correct">0</span>
+          <span class="score-incorrect" id="score-incorrect">0</span>
+          <span class="score-skipped" id="score-skipped">0</span>
+          <span class="score-pct" id="score-pct">--%</span>
+          <span class="score-streak" id="score-streak">0</span>
+        </div>
+      </div>
+
+      <!-- Timer bar -->
+      <div class="timer-container" id="timer-container">
+        <div class="timer-bar" id="timer-bar"></div>
+        <span class="timer-text" id="timer-text"></span>
+      </div>
+
+      <!-- Problem display -->
+      <div class="problem-area">
+        <div class="problem-text" id="problem-text"></div>
+      </div>
+
+      <!-- Answer input -->
+      <div class="answer-area">
+        <input type="text" id="answer-input" class="answer-input" placeholder="Your answer" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <div class="format-hint" id="format-hint">Enter: 5, 3.75, 3/4, or 1 3/4</div>
+      </div>
+
+      <!-- Tip (always accessible) -->
+      <div class="tip-area">
+        <button class="btn-tip" id="btn-tip" style="display:none;">Show Tip</button>
+        <div class="tip-panel" id="tip-panel" style="display:none;"></div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="action-buttons" id="action-buttons">
+        <button class="btn-secondary" id="btn-show-answer">Show Answer</button>
+        <button class="btn-primary" id="btn-submit">Submit</button>
+        <button class="btn-ghost" id="btn-skip">Skip</button>
+      </div>
+
+      <!-- Answer revealed state -->
+      <div class="answer-reveal" id="answer-reveal" style="display:none;">
+        <div class="answer-result" id="answer-result"></div>
+        <div class="correct-answer" id="correct-answer"></div>
+        <div class="solution-panel" id="solution-panel"></div>
+        <button class="btn-primary" id="btn-next">Next Problem &rarr;</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== SESSION SUMMARY ===== -->
+  <div id="screen-summary" class="screen">
+    <div class="container">
+      <h2>Session Summary</h2>
+      <div id="summary-content"></div>
+      <div class="summary-actions">
+        <button class="btn-primary" id="btn-practice-again">Practice Again</button>
+        <button class="btn-secondary" id="btn-change-settings">Change Settings</button>
+        <button class="btn-secondary" id="btn-home">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/problems.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/score.js"></script>
+  <script src="js/tips.js"></script>
+  <script src="js/solutions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
